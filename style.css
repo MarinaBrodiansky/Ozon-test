@@ -1,0 +1,177 @@
+body {
+  font-family: sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 568px;
+  min-width: 320px;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  padding: 1px;
+}
+
+.container h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 12px;
+  color: black;
+  text-align: left;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+  gap: 50px;
+}
+
+.progress-block {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 2em;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.progress-block.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.progress-circle .bg {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 10;
+}
+
+.progress-circle .fg {
+  fill: none;
+  stroke: #2484f0;
+  stroke-width: 8;
+  stroke-linecap: butt;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-block.animated .fg {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control-item {
+  display: flex;
+  gap: 15px;
+}
+
+.value-input {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 27px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+.value-input input {
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.label {
+  font-size: 14px;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 30px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-image: radial-gradient(circle at 50% 50%, #2484f0 50%, transparent 50%);
+  background-size: 50% 100%;
+  background-position: right top;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 27px;
+  margin-left: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+.switch input:checked + .slider {
+  background-color:#2484f0;;
+}
+
+
+.switch-label {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+}

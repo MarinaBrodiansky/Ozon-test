@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ozon Test</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Progress</h1>
+
+      <div class="content-wrapper">
+        <div id="progressBlock" class="progress-block">
+          <svg viewBox="0 0 100 100" class="progress-circle">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle
+              class="fg"
+              cx="50"
+              cy="50"
+              r="45"
+              stroke-dasharray="283"
+              stroke-dashoffset="0"
+            />
+          </svg>
+        </div>
+
+        <div class="controls">
+          <label class="control-item">
+            <span class="value-input">
+              <input
+                type="number"
+                id="progressValue"
+                min="0"
+                max="100"
+                value="50"
+              />
+            </span>
+            <span class="label">Value</span>
+          </label>
+
+          <label class="control-item switch-label">            
+            <label class="switch">
+              <input type="checkbox" id="animateToggle" />
+              <span class="slider"></span>
+            </label>
+            <span class="label">Animate</span>
+          </label>
+
+          <label class="control-item switch-label">            
+            <label class="switch">
+              <input type="checkbox" id="hideToggle" />
+              <span class="slider"></span>
+            </label>
+            <span class="label">Hide</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
