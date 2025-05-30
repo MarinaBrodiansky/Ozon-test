@@ -48,14 +48,21 @@ class Progress {
     } else {
       this.progressBlock.classList.remove("hidden");
     }
-  }  
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector('.container');
+
+  const progressBlock = container.querySelector('.progress-block');
+  const valueInput = container.querySelector('.value-input input[type="number"]');
+  const animateToggle = container.querySelectorAll('.switch input[type="checkbox"]')[0];
+  const hideToggle = container.querySelectorAll('.switch input[type="checkbox"]')[1];
+
   new Progress({
-    progressBlock: document.getElementById("progressBlock"),
-    valueInput: document.getElementById("progressValue"),
-    animateToggle: document.getElementById("animateToggle"),
-    hideToggle: document.getElementById("hideToggle")
+    progressBlock,
+    valueInput,
+    animateToggle,
+    hideToggle
   });
 });
